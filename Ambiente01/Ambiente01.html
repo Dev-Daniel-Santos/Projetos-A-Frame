@@ -1,0 +1,94 @@
+<html>
+<html lang="pt-br">
+
+</html>
+
+<head>
+	<title>Ambiente01</title>
+	<script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+</head>
+
+<body>
+	<a-scene>
+
+		<a-entity id="Camera">
+			<a-camera position="0 1.6 0">
+				<a-cursor id="Cursor"></a-cursor>
+			</a-camera>
+		</a-entity>
+
+		<a-entity id="Sala">
+			<a-box id="Chao" position="0 0 0" rotation="90 0 0" width="7.2" height="7.2" depth="0.1"
+				material="color: #708090" roughness="0"></a-box>
+
+			<a-box id="Parede_Esquerda" position="-3.55 1.45 0" depth="0.1" height="3" width="7.2"
+				material="color: #708090" rotation="0 90 0" roughness="0"></a-box>
+
+			<a-box id="Parede_Direita" position="3.55 1.45 0" depth="0.1" height="3" width="7.2" rotation="0 90 0"
+				material="color: #708090" roughness="0"></a-box>
+
+			<a-box id="Parede_Meio" position="0 1.45 -3.55" rotation="0 0 0" depth="0.1" height="3" width="7.2"
+				material="color: #708090" roughness="0"></a-box>
+
+			<a-box id="Parede_Costas" position="0 1.45 3.55" rotation="0 0 0" depth="0.1" height="3" width="7.2"
+				material="color: #708090" roughness="0"></a-box>
+		</a-entity>
+
+		<a-entity id="Arandelas">
+			<a-box id="Arandela_Esquerda" position="2.5 2.2 3.44" depth="0.3" height="0.5" width="0.3"
+				material="color: #009bff"></a-box>
+
+			<a-box id="Arandela_Direita" position="-2.5 2.2 3.44" depth="0.3" height="0.5" width="0.3"
+				material="color: #009bff"></a-box>
+		</a-entity>
+
+		<a-entity id="Sofa">
+			<a-box id="Estofado" position="-3.2 0.2 1.5" depth="1.8" height="0.5" width="0.7"
+				material="color: #A9A9A9"></a-box>
+
+			<a-box id="Costas_Sofa" position="-3.45 0.8 1.5" depth="1.8" height="1" width="0.2"
+				material="color: #A9A9A9"></a-box>
+		</a-entity>
+
+		<a-entity id="Abajur_Direita">
+			<a-cone id="Cupula_Direita" position="2 1.3 -2.7" height="0.5" radius-bottom="0.5" radius-top="0.3"
+				open-ended="true" side="double" material="color: #D2691E"></a-cone>
+
+			<a-cylinder id="Suporte_Direita" position="2 0.8 -2.7" radius="0.1" height="2.0" material="color: #483D8B"
+				geometry="height: 1; segmentsHeight: 10"></a-cylinder>
+
+			<a-cylinder id="Base_Direita" position="2 0.3 -2.7" radius="0.4" height="0.2"
+				material="color: #483D8B"></a-cylinder>
+		</a-entity>
+
+		<a-entity id="Abajur_Esquerda">
+			<a-cone id="Cupula_Esquerda" position="-2 1.3 -2.7" height="0.5" radius-bottom="0.5" radius-top="0.3"
+				open-ended="true" side="double" material="color: #D2691E"></a-cone>
+
+			<a-cylinder id="Suporte_Esquerda" position="-2 0.8 -2.7" radius="0.1" height="2.0" material="color: #483D8B"
+				geometry="height: 1; segmentsHeight: 10"></a-cylinder>
+
+			<a-cylinder id="Base_Esquerda" position="-2 0.3 -2.7" radius="0.4" height="0.2"
+				material="color: #483D8B"></a-cylinder>
+		</a-entity>
+
+		<a-entity id="Aparador">
+			<a-box id="Base_Aparador" position="3.03 0.9 -0.5" depth="2.4" height="0.1" width="0.9"
+				material="color: #deb887"></a-box>
+
+			<a-box id="Suporte1" position="2.73 0.5 -1.5" depth="0.1" height="0.9" width="0.1"
+				material="color: #deb887"></a-box>
+
+			<a-box id="Suporte2" position="3.33 0.5 -1.5" depth="0.1" height="0.9" width="0.1"
+				material="color: #deb887"></a-box>
+
+			<a-box id="Suporte3" position="2.73 0.5 0.5" depth="0.1" height="0.9" width="0.1"
+				material="color: #deb887"></a-box>
+
+			<a-box id="Suporte4" position="3.33 0.5 0.5" depth="0.1" height="0.9" width="0.1"
+				material="color: #deb887"></a-box>
+		</a-entity>
+
+		<a-sky color="SkyBlue" material="" geometry="" scale="1 1 0.98" rotation=""></a-sky>
+
+	</a-scene>

@@ -17,32 +17,79 @@
 			</a-camera>
 		</a-entity>
 
+		<a-entity id="Iluminação">
+			<a-light id="Luz Ambiente" type="ambient" intensity="0.7" angle="90"></a-light>
+
+			<a-light id="Arandela.Esquerda" type="spot" position="2.5 2.2 3.47" intensity="0.5"
+				rotation="-90 0 0"></a-light>
+
+			<a-light id="Arandela.Direita" type="spot" position="-2.5 2.2 3.47" intensity="0.5"
+				rotation="-90 0 0"></a-light>
+
+			<a-light id="Abajur.Direita" type="point" position="2 1.3 -2.7" intensity="0.5"></a-light>
+
+			<a-light id="Abajur.Esquerda" type="point" position="-2 1.3 -2.7" intensity="0.5"></a-light>
+		</a-entity>
+
 		<a-entity id="Sala">
 			<a-box id="Chao" position="0 0 0" rotation="90 0 0" width="7.2" height="7.2" depth="0.1"
-				material="color: #708090" roughness="0"></a-box>
+				material="color: #708090" roughness="0" class="intersectable" onmouseenter="showText('Texto Chao')"
+				onmouseleave="hideText('Texto Chao')"></a-box>
 
 			<a-box id="Parede_Esquerda" position="-3.55 1.45 0" depth="0.1" height="3" width="7.2"
-				material="color: #708090" rotation="0 90 0" roughness="0"></a-box>
+				material="color: #708090" rotation="0 90 0" roughness="0" class="intersectable"
+				onmouseenter="showText('Texto Esquerda')" onmouseleave="hideText('Texto Esquerda')"></a-box>
 
 			<a-box id="Parede_Direita" position="3.55 1.45 0" depth="0.1" height="3" width="7.2" rotation="0 90 0"
-				material="color: #708090" roughness="0"></a-box>
+				material="color: #708090" roughness="0" class="intersectable" onmouseenter="showText('Texto Direita')"
+				onmouseleave="hideText('Texto Direita')"></a-box>
 
 			<a-box id="Parede_Meio" position="0 1.45 -3.55" rotation="0 0 0" depth="0.1" height="3" width="7.2"
-				material="color: #708090" roughness="0"></a-box>
+				material="color: #708090" roughness="0" class="intersectable" onmouseenter="showText('Texto Meio')"
+				onmouseleave="hideText('Texto Meio')"></a-box>
 
 			<a-box id="Parede_Costas" position="0 1.45 3.55" rotation="0 0 0" depth="0.1" height="3" width="7.2"
-				material="color: #708090" roughness="0"></a-box>
+				material="color: #708090" roughness="0" class="intersectable" onmouseenter="showText('Texto Costas')"
+				onmouseleave="hideText('Texto Costas')"></a-box>
+		</a-entity>
+
+		<a-entity id="Textos Sala">
+			<a-entity id="Texto Chao" text="value: Chao; color: #000000; width: 3" position="1 0.05 -1" visible="false"
+				rotation="-90 0 45"></a-entity>
+
+			<a-entity id="Texto Esquerda" text="value: Parede Esquerda; color: #000000; width: 3" position="-3.5 1.5 -1"
+				visible="false" rotation="0 90 0"></a-entity>
+
+			<a-entity id="Texto Direita" text="value: Parede Direita; color: #000000; width: 3" position="3.5 1.5 1"
+				visible="false" rotation="0 -90 0"></a-entity>
+
+			<a-entity id="Texto Meio" text="value: Parede Meio; color: #000000; width: 3" position="1.1 1.5 -3.5"
+				visible="false" side="doble" rotation="0 0 0"></a-entity>
+
+			<a-entity id="Texto Costas" text="value: Parede Atras; color: #000000; width: 3" position="-1.1 1.5 3.5"
+				visible="false" rotation="0 -180 0"></a-entity>
 		</a-entity>
 
 		<a-entity id="Arandelas">
 			<a-box id="Arandela_Esquerda" position="2.5 2.2 3.44" depth="0.3" height="0.5" width="0.3"
-				material="color: #009bff"></a-box>
+				material="color: #009bff" class="intersectable" onmouseenter="showText('Arandela Esquerda')"
+				onmouseleave="hideText('Arandela Esquerda')"></a-box>
 
 			<a-box id="Arandela_Direita" position="-2.5 2.2 3.44" depth="0.3" height="0.5" width="0.3"
-				material="color: #009bff"></a-box>
+				material="color: #009bff" class="intersectable" onmouseenter="showText('Arandela Direita')"
+				onmouseleave="hideText('Arandela Direita')"></a-box>
 		</a-entity>
 
-		<a-entity id="Sofa">
+		<a-entity id="Textos Arandelas">
+			<a-entity id="Arandela Esquerda" text="value: Arandela; color: #000000; width: 2" position="1.68 2.2 3.29"
+				visible="false" rotation="0 180 0"></a-entity>
+
+			<a-entity id="Arandela Direita" text="value: Arandela; color: #000000; width: 2" position="-3.32 2.2 3.29"
+				visible="false" rotation="0 180 0"></a-entity>
+		</a-entity>
+
+		<a-entity id="Sofa" class="intersectable" onmouseenter="showText('Texto Sofa')"
+			onmouseleave="hideText('Texto Sofa')">
 			<a-box id="Estofado" position="-3.2 0.2 1.5" depth="1.8" height="0.5" width="0.7"
 				material="color: #A9A9A9"></a-box>
 
@@ -50,7 +97,13 @@
 				material="color: #A9A9A9"></a-box>
 		</a-entity>
 
-		<a-entity id="Abajur_Direita">
+		<a-entity id="Textos Sofa">
+			<a-entity id="Texto Sofa" text="value: Sofa; color: #000000; width:3" position="-3.35 0.8 0.2"
+				rotation="0 90 0" visible="false"></a-entity>
+		</a-entity>
+
+		<a-entity id="Abajur_Direita" class="intersectable" onmouseenter="showText('Texto Abajur Direita')"
+			onmouseleave="hideText('Texto Abajur Direita')">
 			<a-cone id="Cupula_Direita" position="2 1.3 -2.7" height="0.5" radius-bottom="0.5" radius-top="0.3"
 				open-ended="true" side="double" material="color: #D2691E"></a-cone>
 
@@ -61,7 +114,13 @@
 				material="color: #483D8B"></a-cylinder>
 		</a-entity>
 
-		<a-entity id="Abajur_Esquerda">
+		<a-entity id="Texto Abajur.Direita">
+			<a-entity id="Texto Abajur Direita" text="value: Abajur; color: #000000; width: 3" position="3.3 1.8 -2.7"
+				rotation="0 0 0" visible="false"></a-entity>
+		</a-entity>
+
+		<a-entity id="Abajur_Esquerda" class="intersectable" onmouseenter="showText('Texto Abajur Esquerda')"
+			onmouseleave="hideText('Texto Abajur Esquerda')">
 			<a-cone id="Cupula_Esquerda" position="-2 1.3 -2.7" height="0.5" radius-bottom="0.5" radius-top="0.3"
 				open-ended="true" side="double" material="color: #D2691E"></a-cone>
 
@@ -72,7 +131,13 @@
 				material="color: #483D8B"></a-cylinder>
 		</a-entity>
 
-		<a-entity id="Aparador">
+		<a-entity id="Texto Abajur.Esquerda">
+			<a-entity id="Texto Abajur Esquerda" text="value: Abajur; color: #000000; width: 3" position="-0.7 1.8 -2.7"
+				rotation="0 0 0" visible="false"></a-entity>
+		</a-entity>
+
+		<a-entity id="Aparador" class="intersectable" onmouseenter="showText('Texto Aparador')"
+			onmouseleave="hideText('Texto Aparador')">
 			<a-box id="Base_Aparador" position="3.03 0.9 -0.5" depth="2.4" height="0.1" width="0.9"
 				material="color: #deb887"></a-box>
 
@@ -87,6 +152,11 @@
 
 			<a-box id="Suporte4" position="3.33 0.5 0.5" depth="0.1" height="0.9" width="0.1"
 				material="color: #deb887"></a-box>
+		</a-entity>
+
+		<a-entity id="Texto.Aparador">
+			<a-entity id="Texto Aparador" text="value: Aparador; color: #000000; width: 3" position="3 1.5 0.8"
+				rotation="0 -90 0" visible="false"></a-entity>
 		</a-entity>
 
 		<a-sky color="SkyBlue" material="" geometry="" scale="1 1 0.98" rotation=""></a-sky>
